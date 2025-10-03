@@ -1,0 +1,32 @@
+{
+    "profileImage": "/images/profile.png",
+    "profileAlt": "Foto de Bernardo Nogueira para o portfólio",
+    "profileLink": "/about-me",
+    "profileTitle": "Data Scientist",
+    "profileName": "Bernardo Nogueira",
+    "github": "https://github.com/bernardonogueira8",
+    "githubText": "Curtiu esse portfólio? Confira mais no meu GitHub!",
+    "portfolioImage": "/images/portfolio.png",
+    "email": "bernardonogueira8@hotmail.com",
+    "linkedin": "https://www.linkedin.com/in/bernardonogueira8",
+    "instagram": "https://www.instagram.com/bernardo.nogueira8",
+    "youtube": "https://www.youtube.com/channel/UC_Zyyr27x67UaGcHS55rutQ",
+    "alias": "bernardonogueira8",
+    "contactSectionTitle": "Quer transformar dados em insights?",
+    "contactSectionSubtitle": "Vamos conversar!",
+    "contactSectionButtonText": "Fale Comigo",
+    "contactSectionButtonIcon": "paperplane",
+    "techsTitle": "TECNOLOGIAS",
+    "instagramIconName": "instagram",
+    "youtubeIconName": "youtube",
+    "githubIconName": "github",
+    "linkedinIconName": "linkedin",
+    "emailIconName": "envelope",
+    "hobbies": ["Ciência de Dados", "Matemática", "Gastronomia"],
+    "pageTitle": "BernardoNogueira8",
+    "pageDescription": "Portfólio minimalista e moderno para destacar projetos em Data Science, Matemática e Tecnologia.",
+    "OGImage": {
+        "url": "/images/portfolio.png",
+        "alt": "Screenshot de um portfólio moderno destacando projetos de Data Science, Matemática e Ensino."
+    }
+}

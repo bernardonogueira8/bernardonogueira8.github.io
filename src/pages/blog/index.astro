@@ -1,0 +1,21 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Hero from "../../components/blog/Hero.astro";
+import Tags from "../../components/blog/Tags.astro";
+import ListPosts from "../../components/blog/ListPosts.astro";
+
+const pageTitle = "Ciência de Dados, Matemática e Tecnologia | Blog de Bernardo Nogueira";
+const description = "Bem-vindo ao meu blog! Aqui compartilho projetos, artigos e reflexões sobre Data Science, Matemática, Programação e Educação.";
+const ogimage = {
+    url: "/images/blogimage.webp",
+    alt: "Logo BN em fundo laranja com efeito de luz. Texto: 'Ciência de Dados e Matemática' e URL 'bernardonogueira8.github.io'."
+};
+---
+
+<Layout pageTitle={pageTitle} description={description} ogimage={ogimage}>
+    <Hero />
+    <Tags />
+    <div class="px-8 max-sm:px-4">
+        <ListPosts />
+    </div>
+</Layout>
