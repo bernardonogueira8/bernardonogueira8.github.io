@@ -108,6 +108,7 @@ export const languages: Record<string, Language> = {
     },
     python: {
         name: "Python",
+        className: "bg-[#f6ece1]!",
         iconName: "python",
     },
     power: {
@@ -123,6 +124,39 @@ export const languages: Record<string, Language> = {
         name: "SQL",
         className: "bg-[#f6ece1]!",
         iconName: "sql",
+    },
+    pandas: {
+        name: "Pandas",
+        className: "bg-[#f6ece1]!",
+        iconName: "pandas",
+    },
+    mlflow: {
+        name: "MLFlow",
+        className: "bg-[#f6ece1]!",
+        iconName: "mlflow",
+    },
+    tensorflow: {
+        name: "TensorFlow",
+        className: "bg-[#f6ece1]!",
+        iconName: "tensorflow",
+    },
+    scikit_learn: {
+        name: "Scikit Learn",
+        className: "bg-[#f6ece1]!",
+        iconName: "scikit_learn",
+    },
+    matplotlib: {
+        name: "Matplotlib",
+        iconName: "matplotlib",
+    },
+    numpy: {
+        name: "Numpy",
+        className: "bg-[#f6ece1]!",
+        iconName: "numpy",
+    },
+    seaborn: {
+        name: "Seaborn",
+        iconName: "seaborn",
     },
 };
 
