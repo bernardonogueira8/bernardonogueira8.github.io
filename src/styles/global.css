@@ -69,6 +69,33 @@
         }
     }
 }
+.goog-te-gadget {
+    color: transparent !important;
+    font-size: 0px;
+}
+
+.goog-text-highlight {
+    background: transparent !important;
+    box-shadow: transparent !important;
+}
+
+#google_translate_element select {
+    background: #ffedd5;
+    color: #171717;
+    border: none;
+    font-weight: bold;
+    border-radius: 3px;
+    padding: 8px 12px;
+}
+
+.dark #google_translate_element select {
+    background: #171717;
+    color: #ffffff;
+    border: none;
+    font-weight: bold;
+    border-radius: 3px;
+    padding: 8px 12px;
+}
 
 @property --border-angle {
     syntax: "<angle>";
@@ -284,4 +311,15 @@ a.inline-block.leading-5.pl-12 {
     z-index: -1;
     border-radius: 50%;
     filter: blur(10px);
+}
+
+body > .skiptranslate,
+.goog-logo-link,
+.gskiptranslate,
+.goog-te-gadget span,
+.goog-te-banner-frame,
+#goog-gt-tt,
+.goog-te-balloon-frame,
+div#goog-gt-tt {
+    display: none !important;
 }

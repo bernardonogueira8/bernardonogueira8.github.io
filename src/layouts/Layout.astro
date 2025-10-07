@@ -43,6 +43,33 @@ const twitterimage = `${siteUrl}${ogimage.url}`;
     <!-- Web manifest -->
     <link rel="manifest" href="/site.webmanifest" />
 
+    <script type="text/javascript">
+          function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+              {
+                pageLanguage: 'pt',
+                // Vamos limitar os idiomas aqui mesmo!
+                includedLanguages: 'pt,en,es,fr,de', 
+                layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL,
+                autoDisplay: true
+              }, 
+              'google_translate_element'
+            );
+          }
+        </script>
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<script>
+ function googleTranslateElementInit() {
+ new google.translate.TranslateElement({
+ pageLanguage: 'en',
+ autoDisplay: 'true',
+ includedLanguages:'hi,en,bn,ar,ja,iw', // <- remove this line to show all language
+ layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+ }, 'google_translate_element');
+ }
+</script>
+
     <meta name="description" content={description} />
     <meta name="author" content={SEO.author} />
     <meta name="robots" content="index, follow" />

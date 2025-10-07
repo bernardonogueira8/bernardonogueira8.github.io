@@ -10,7 +10,11 @@ export default defineConfig({
     site: "https://bernardonogueira8.github.io",
     integrations: [
         preact(),
-        icon(),
+        icon({
+            include: {
+                ph: ["*"],
+            },
+        }),
         sitemap({
             filter: (page) =>
                 !page.includes("/blog/tags") && !page.includes("/blog/techs"),
