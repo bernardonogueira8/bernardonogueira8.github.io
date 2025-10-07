@@ -10,15 +10,15 @@ const { items = [] }: { items: (keyof typeof menu)[] } = Astro.props as {
 };
 
 const menu = {
-  about: { name: "About Me", path: "/about-me" },
+  about: { name: "Sobre mim", path: "/about-me" },
   blog: {
     name: "Blog",
     path: "/blog/",
-    dropdown: [{ name: "All Posts", path: "/blog/posts/" }],
+    dropdown: [{ name: "Todos os Posts", path: "/blog/posts/" }],
   },
-  home: { name: "Home", path: "/#home" },
-  experience: { name: "Experience", path: "/#experience" },
-  projects: { name: "Projects", path: "/#projects" },
+  home: { name: "Início", path: "/#home" },
+  experience: { name: "Experiências", path: "/#experience" },
+  projects: { name: "Projetos", path: "/#projects" },
 };
 
 // Common base classes
@@ -44,7 +44,7 @@ const baseClasses = {
         "text-mint-500",
         "dark:text-mint-400",
         "font-bold",
-        "[text-shadow:1px_1px_11px_rgba(208,251,229,0.7)]",
+        "[text-shadow:1px_1px_10px_]",
       ],
       inactive: ["dark:text-zinc-300", "text-blacktext"],
     };

@@ -2,30 +2,24 @@
 import ExperienceItem from "./ExperienceItem.astro";
 import Heading from "../ui/Heading.astro";
 import { Icon } from "astro-icon/components";
+import { getCollection } from "astro:content";
 
-const EXPERIENCE = [
-  {
-    date: "2021 - Present",
-    title: "Software Development Coordinator",
-    company: "EFEELE.DEV",
-    description:
-      "I lead the planning, development, and implementation of software projects to optimize administrative processes and improve digital services. I manage and provide support for technology platforms, coordinating development teams to deliver efficient solutions.",
-  },
-  {
-    date: "2019 - 2020",
-    title: "Software Development Coordinator",
-    company: "EFEELE.DEV",
-    description:
-      "I lead the planning, development, and implementation of software projects to optimize administrative processes and improve digital services. I manage and provide support for technology platforms, coordinating development teams to deliver efficient solutions.",
-  },
-];
+// Pegando todos os markdowns da coleção
+const experienceEntries = await getCollection("experience");
+
+// Ordenando do mais recente pro mais antigo (usando o campo "order")
+const EXPERIENCE = experienceEntries
+  .sort((a, b) => b.data.order - a.data.order)
+  .map(({ data }) => data);
+
 ---
+
 
 <section class="py-8 px-8 max-md:py-4 mb-4 scroll-m-16" id="experience">
   <div class="flex flex-col pt-8 max-w-4xl mx-auto">
     <div class="flex gap-4 items-center justify-center">
       <Icon class="text-3xl dark:text-white text-blacktext" name="briefcase" />
-      <Heading text="Work" textGradient="Experience" level={2} />
+      <Heading text="Experiência" textGradient="de Trabalho" level={2} />
     </div>
 
     <div class="relative max-md:mt-0 mt-8" aria-label="Professional experience">
