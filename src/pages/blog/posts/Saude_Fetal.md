@@ -6,7 +6,7 @@ pubDate: 2025-01-29
 description: "Análise automatizada de Cardiotocografias (CTGs) usando Deep Learning para classificar o risco de sofrimento fetal."
 tags: ["Python", "Ciência de Dados", "Saúde", "Deep Learning", "Projetos"]
 project: true
-languages: ["python", "tensorflow", "keras", "pandas", "scikit_learn", "mlflow"]
+languages: ["python", "tensorflow", "pandas", "scikit_learn", "mlflow"]
 image:
     url: "/images/projects/fetal_health.png"
     alt: "Visualização de cardiotocografia e análise de dados."
