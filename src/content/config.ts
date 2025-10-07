@@ -48,9 +48,26 @@ const jsonDataCollection = defineCollection({
         }),
     }),
 });
+export const postsCollection = defineCollection({
+    type: "content",
+    schema: z.object({
+        title: z.string(),
+        pubDate: z.string(),
+        description: z.string(),
+        tags: z.array(z.string()), // ex: ["projetos", "blog"]
+        languages: z.array(z.string()).optional(),
+        image: z
+            .object({
+                url: z.string(),
+                alt: z.string(),
+            })
+            .optional(),
+    }),
+});
 
 // 🔹 3. Aí sim exporta o objeto final
 export const collections = {
     staticData: jsonDataCollection,
     experience: experienceCollection,
+    posts: postsCollection,
 };

@@ -3,14 +3,17 @@ import Project from "./Project.astro";
 import Heading from "../ui/Heading.astro";
 import { Icon } from "astro-icon/components";
 
-const allPosts = await Astro.glob("../../pages/portfolio/projects/*.md");
+const allPosts = await Astro.glob("../../pages/blog/posts/*.md");
 
-// Sort by descending date (most recent first)
-allPosts.sort(
-  (a, b) =>
-    new Date(b.frontmatter.pubDate).getTime() -
-    new Date(a.frontmatter.pubDate).getTime(),
-);
+// Filtra posts que não são rascunho
+const publishedPosts = allPosts
+  .filter(post => !post.frontmatter.project=== false)
+  .sort(
+    (a, b) =>
+      new Date(b.frontmatter.pubDate).getTime() -
+      new Date(a.frontmatter.pubDate).getTime()
+  );
+
 ---
 
 <section
@@ -47,7 +50,7 @@ allPosts.sort(
     class="mx-auto max-w-7xl grid grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-5 p-2 py-4 max-h-[150vh] overflow-hidden transition-[max-height] duration-500 ease-in-out"
   >
     {
-      allPosts.map((post) => (
+      publishedPosts.map((post) => (
         <Project
           url={post.url}
           title={post.frontmatter.title}
@@ -58,6 +61,7 @@ allPosts.sort(
         />
       ))
     }
+
   </div>
 
   <div
