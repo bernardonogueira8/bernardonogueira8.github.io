@@ -30,12 +30,11 @@ O objetivo principal é prever o **valor mediano das casas (medianHouseValue)** 
 ### Modelo Vencedor
 
 Após a comparação, o **Random Forest Regressor** foi selecionado como o modelo de melhor desempenho:
-`markdown
+
 | Métrica      | Valor      |
 | :----------- | :--------- |
 | **R² Médio** | **0.8068** |
 | RMSE Médio   | $50,726.74 |
-`
 
 ---
 

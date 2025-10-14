@@ -35,6 +35,7 @@ O **Logistic Regression** foi selecionado como o modelo final, servindo como uma
 | :----------- | :--------- |
 | **Acurácia** | **76.79%** |
 
+
 ---
 
 ## 💡 Tecnologias e Repositório
