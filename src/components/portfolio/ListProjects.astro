@@ -74,14 +74,27 @@ const publishedPosts = allPosts
       Veja mais projetos...
     </button>
   </div>
+  <div id="morePost"
+  class="absolute bottom-0 left-0 w-full flex justify-center text-center bg-linear-to-t from-[#FBFEFD] dark:from-[#0e0e10] pb-30 pt-52 hidden"
+  >
+  <button
+      class="absolute font-bold cursor-pointer text-mint-400 dark:text-mint-100 hover:text-mint-500 dark:hover:text-mint-300 transition-all"
+    >
+      <a href="/blog/">
+        Continue explorando: meu blog está repleto de outros artigos esperando por você.
+      </a>
+    </button>
+  </div>
+  
 </section>
 
 <script>
   document.querySelector("#moreProjects")?.addEventListener("click", () => {
     const container = document.querySelector("#containerProjects");
     const moreProjectsBtn = document.querySelector("#moreProjects");
-
+    
     if (container && moreProjectsBtn) {
+      const morePost = document.querySelector("#morePost");
       // Expand container to show all projects
       container.classList.remove("h-[150vh]");
       container.classList.remove("h-auto");
@@ -92,6 +105,8 @@ const publishedPosts = allPosts
       setTimeout(() => {
         moreProjectsBtn.classList.add("hidden");
       }, 500);
+
+      morePost.classList.remove('hidden');
     }
   });
 </script>
