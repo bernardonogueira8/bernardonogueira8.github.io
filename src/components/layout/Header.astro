@@ -2,6 +2,8 @@
 import Navigation from "./Navigation.astro";
 import ThemeIcon from "../ui/ThemeIcon.astro";
 import Social from "../ui/Social.astro";
+import Tradutor from "../ui/LanguageSwitcher.astro";
+
 import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
 
@@ -37,17 +39,17 @@ const navItems = isActiveRoute
 
     <Navigation items={navItems} />
 
-    <div class="flex items-center justify-between gap-5 text-xl">
+    <div class="flex items-center justify-between gap-4 text-xl">
       <div
-        class="max-md:hidden flex items-center justify-center gap-5"
+        class="max-md:hidden flex items-center justify-center gap-4"
         role="group"
       >
-        <div id="google_translate_element"></div>
+        <Tradutor />
         <Social link={github} iconName={githubIconName} />
         <Social link={linkedin} iconName={linkedinIconName} />
       </div>
     </div>
-    <div class="flex items-center gap-5 text-xl md:pl-5">
+    <div class="flex items-center gap-4 text-xl md:pl-4">
       <ThemeIcon />
       
       <button

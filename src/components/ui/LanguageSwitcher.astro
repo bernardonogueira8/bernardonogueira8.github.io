@@ -1,0 +1,92 @@
+---
+// src/components/Tradutor.astro
+// Nenhuma lógica de servidor é necessária aqui, por isso esta parte fica vazia.
+---
+
+<div id="translator-container" class="translator-container">
+  <button id="translate-toggle-button" aria-label="Abrir seletor de idiomas"
+  class="hover:text-mint-300 hover:scale-150 transition-all" >
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="10"></circle>
+    <line x1="2" y1="12" x2="22" y2="12"></line>
+    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+     </svg>
+  </button>
+
+  <div id="google_translate_element"></div>
+</div>
+
+<script>
+  // Este script executa no lado do cliente (no navegador).
+  document.addEventListener('DOMContentLoaded', () => {
+    // Seleciona o botão e o container principal.
+    const toggleButton = document.getElementById('translate-toggle-button');
+    const container = document.getElementById('translator-container');
+    const googleTranslateElement = document.getElementById('google_translate_element');
+
+    // Adiciona um evento de clique ao botão.
+    toggleButton.addEventListener('click', (event) => {
+      // Impede que o clique se propague para outros elementos.
+      event.stopPropagation();
+      // Adiciona ou remove a classe 'is-active' no container.
+      // É esta classe que controla a visibilidade do seletor de idiomas no CSS.
+      container.classList.toggle('is-active');
+    });
+
+    // Adiciona um evento para fechar o tradutor se clicar fora dele.
+    document.addEventListener('click', (event) => {
+      // Verifica se o container está ativo e se o clique foi fora do container.
+      if (container.classList.contains('is-active') && !container.contains(event.target as Node)) {
+        container.classList.remove('is-active');
+      }
+    });
+  });
+</script>
+
+<style>
+  .translator-container {
+    position: relative;
+    display: inline-block; /* Garante que o container ocupe apenas o espaço necessário */
+  }
+  #translate-toggle-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #translate-toggle-button svg {
+    width: 20px;
+    height: 20px;
+  }
+    #google_translate_element {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 130%; /* Posição abaixo do ícone */
+    right: 0;
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+  }
+  .translator-container.is-active #google_translate_element {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  /* Remove o iframe que o Google cria para mostrar o seu logo */
+  :global(iframe.goog-te-banner-frame) {
+    display: none !important;
+  }
+  
+  /* Garante que o corpo da página não se desloque para cima quando o banner do Google é removido */
+  :global(body) {
+    top: 0px !important;
+  }
+  
+</style>
