@@ -26,7 +26,8 @@ Este tutorial fornece um passo a passo para a implementação do Novo SGA, um si
 2. **Criar o Pendrive de Boot:** Use uma ferramenta como o **Rufus** ou **Etcher** para gravar a ISO no pendrive, tornando-o inicializável.
 3. **Bootar o Servidor:** Conecte o pendrive no servidor, reinicie-o e selecione o pendrive como dispositivo de boot. 
 4. **Iniciar a Instalação:**
-    1. Selecione **"Install Proxmox VE"**. ![[Pasted image 20251124114045.png]]
+    1. Selecione **"Install Proxmox VE"**.<img width="1026" height="768" alt="image" src="https://github.com/user-attachments/assets/2330b30d-374f-4825-a5f6-0641cf70f78e" />
+
     2. Aceite os Termos de Uso. ![[Pasted image 20251124114112.png]]
     3. Selecione o disco onde o Proxmox será instalado.(Normalmente já vem pré-selecionado, obs: Na janela que se abre (Harddisk options) configurar conforme o print abaixo, definindo 60GB no campo "hdsize" (o restante do espaço em disco será alocado posteriormente para definição do Storage das Máquinas Virtuais), o campo "maxroot" também com 60GB e o "maxvz" com 0 (zero). Isso fará com que o Proxmox não crie a automaticamente uma partição para o Storage das VMs (ele cria por padrão), pois isso será feito manualmente depois).
     4. Defina as **Configurações Regionais** (País, Fuso Horário e Layout do Teclado). ![[Pasted image 20251124114258.png]]
