@@ -9,7 +9,7 @@ project: true
 languages:
     ["docker", "php"]
 image:
-    url: "images/projects/novosga.png"
+    url: "/images/projects/novosga.png"
     alt: "Visualização do painel SGA."
 ---
 Este tutorial fornece um passo a passo para a implementação do Novo SGA, um sistema de gerenciamento de senhas eficiente e amplamente utilizado em ambientes públicos e privados.
