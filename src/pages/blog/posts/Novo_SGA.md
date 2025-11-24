@@ -38,8 +38,7 @@ Este tutorial fornece um passo a passo para a implementação do Novo SGA, um si
 É uma boa prática instalar o Portainer dentro de um contêiner leve (LXC) no Proxmox para gerenciar o Docker.
 
 ### 1. Criar um Contêiner VM para o Docker
-  <img width="1026" height="768" alt="image" src="https://github.com/bernardonogueira8/bernardonogueira8.github.io/blob/main/public/images/projects/NovoSGA/Pasted%20image%2020251124115647.png?raw=true" />
-1. **Acesse o Shell:** Na interface web do Proxmox, navegue para o nó principal (**host**) e clique em **Shell**.
+1. **Acesse o Shell:** Na interface web do Proxmox, navegue para o nó principal (**host**) e clique em **Shell**. <img width="1026" height="768" alt="image" src="https://github.com/bernardonogueira8/bernardonogueira8.github.io/blob/main/public/images/projects/NovoSGA/Pasted%20image%2020251124115647.png?raw=true" />
 2. **Execute o Script:** Cole o código que você forneceu. Ele irá baixar, configurar e criar uma VM com o Ubuntu 24.04.
    ```
    bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/vm/ubuntu2404-vm.sh)"
@@ -69,14 +68,96 @@ Este tutorial fornece um passo a passo para a implementação do Novo SGA, um si
 5. Configuração Inicial: Crie o usuário administrador, defina a senha e, na próxima tela, selecione "Local" e clique em "Connect". *Dica:* Coloque a senha como: _SenhaPortainerProxmox_
 ## Parte 3: Utilização do NovaSGA (Via Portainer)
 Com o Portainer pronto, o processo para subir o NovaSGA é o mesmo (e o mais fácil) usando **Stacks** (Docker Compose). Uma ótima playlist é do canal "Missão Live"([AULA 8 \| Instalando Novosga Versão 2.2 - YouTube](https://www.youtube.com/watch?v=yYieBXf7Cf4&list=PLO9jGpiO1ux2vEAzKzbZsA5aKnO0Heg59&index=8)). Iremos instalar já versão 2.2, para porder habilitar a função Fura Fila.
+
 ### 1. Configuração no Portainer (Usando Stacks)
 
 1. No Portainer, vá em **"Stacks"** -> **"Add stack"**.
 2. Dê um nome para o projeto (ex: `novasga-sistema`).
 3. Cole o seguinte código no campo **"Web editor"**. Este código garante que o sistema de fila, o painel e o banco de dados rodem juntos:
     > ⚠️ **Atenção:** Mantenha as portas e senhas ajustadas para sua infra. As imagens usadas são de exemplo, você deve buscar as **imagens oficiais mais recentes** do NovaSGA no Docker Hub (geralmente sob a organização `novasga/` ou similar).
+    ```yaml
+	services:
+	  novosga:
+	    image: novosga/novosga:2.2-standalone
+	    restart: always
+	    depends_on:
+	      - mysqldb
+	    ports:
+	      - "80:8080"
+	    environment:
+	      APP_ENV: 'prod'
+	      # database connection
+	      DATABASE_URL: 'mysql://novosga:MySQL_App_P4ssW0rd@mysqldb:3306/novosga2?charset=utf8mb4&serverVersion=5.7'
+	      # default admin user
+	      NOVOSGA_ADMIN_USERNAME: 'admin'
+	      NOVOSGA_ADMIN_PASSWORD: '123456'
+	      NOVOSGA_ADMIN_FIRSTNAME: 'Administrador'
+	      NOVOSGA_ADMIN_LASTNAME: 'Global'
+	      # default unity
+	      NOVOSGA_UNITY_NAME: 'Minha unidade'
+	      NOVOSGA_UNITY_CODE: 'U01'
+	      # default no-priority
+	      NOVOSGA_NOPRIORITY_NAME: 'Normal'
+	      NOVOSGA_NOPRIORITY_DESCRIPTION: 'Atendimento normal'
+	      # default priority
+	      NOVOSGA_PRIORITY_NAME: 'Prioridade'
+	      NOVOSGA_PRIORITY_DESCRIPTION: 'Atendimento prioritário'
+	      # default place
+	      NOVOSGA_PLACE_NAME: 'Guichê'
+	      # Set TimeZone and locale
+	      TZ: 'America/Sao_Paulo'
+	      APP_LANGUAGE: 'pt_BR'
+	      # Endereço Mercure para publicar mensagem (onde "mercure" é o nome do host)
+	      # esse endereço será chamado internamente via o PHP
+	      MERCURE_URL: http://mercure:3000/.well-known/mercure
+	      # Endereço Mercure para consumir mensagem
+	      # esse endereço será chamado via o navegador web
+	      MERCURE_PUBLIC_URL: http://<seu-ip>:3000/.well-known/mercure
+	      # the default secret key, must be the same as MERCURE_PUBLISHER_JWT_KEY
+	      MERCURE_JWT_SECRET: "!ChangeThisMercureHubJWTSecretKey!"
+	  mercure:
+	    image: novosga/mercure:v0.11
+	    restart: always
+	    ports:
+	      - "3000:3000"
+	    environment:
+	      # same value from ports
+	      SERVER_NAME: ":3000"
+	      # default publish key, must be changed
+	      MERCURE_PUBLISHER_JWT_KEY: "!ChangeThisMercureHubJWTSecretKey!"
+	      MERCURE_EXTRA_DIRECTIVES:  "anonymous 1; cors_origins *"
+	  mysqldb:
+	    image: mysql:8.0
+	    restart: always
+	    environment:
+	      MYSQL_USER: 'novosga'
+	      MYSQL_DATABASE: 'novosga2'
+	      MYSQL_ROOT_PASSWORD: 'MySQL_r00t_P4ssW0rd'
+	      MYSQL_PASSWORD: 'MySQL_App_P4ssW0rd'
+	      # Set TimeZone
+	      TZ: 'America/Sao_Paulo'
+    ```
+4. Clique em "Deploy the stack".
+5. Executando docker-compose:
+```
+docker-compose up -d
+```
+6. Acessar o banco de dados MySQL como root:
+```
+docker-compose exec mysqldb sh -c  'mysql -uroot -p'
+```
+7. Dar permissão de acesso para o usuário da aplicação:
+```
+GRANT ALL ON novosga2.* TO 'novosga'@'%' IDENTIFIED BY 'MySQL_App_P4ssW0rd';
+quit
+```
 
 ## Configuração do NovoSGA
+### Aparência
+- Preencha o campo Logo da barra de Navegação com: <img width="99" height="38" alt="novosga-navbar" src="https://github.com/user-attachments/assets/9ea8bead-a5d9-4f17-84f3-8aeb187140ff" />
+
+- Preencha o campo Logo do Login com:<img width="270" height="107" alt="novosga-login" src="https://github.com/user-attachments/assets/60d80423-1123-4e95-9b30-668a07f2684e" />
+
 ### Sistema
 <img width="1026" height="768" alt="image" src="https://github.com/bernardonogueira8/bernardonogueira8.github.io/blob/main/public/images/projects/NovoSGA/Pasted%20image%2020251124140641.png?raw=true" />
 ### Unidades
