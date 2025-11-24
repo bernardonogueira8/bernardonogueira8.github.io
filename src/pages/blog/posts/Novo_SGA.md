@@ -67,7 +67,9 @@ Este tutorial fornece um passo a passo para a implementação do Novo SGA, um si
 4. Acesso ao Portainer: Descubra o IP da sua VM (use o comando ip a no console da VM). Abra seu navegador e acesse a interface do Portainer: https://<IP_da_VM>:9443
 5. Configuração Inicial: Crie o usuário administrador, defina a senha e, na próxima tela, selecione "Local" e clique em "Connect". *Dica:* Coloque a senha como: _SenhaPortainerProxmox_
 ## Parte 3: Utilização do NovaSGA (Via Portainer)
-Com o Portainer pronto, o processo para subir o NovaSGA é o mesmo (e o mais fácil) usando **Stacks** (Docker Compose). Uma ótima playlist é do canal "Missão Live"([AULA 8 \| Instalando Novosga Versão 2.2 - YouTube](https://www.youtube.com/watch?v=yYieBXf7Cf4&list=PLO9jGpiO1ux2vEAzKzbZsA5aKnO0Heg59&index=8)). Iremos instalar já versão 2.2, para porder habilitar a função Fura Fila.
+Com o Portainer pronto, o processo para subir o NovaSGA é o mesmo (e o mais fácil) usando **Stacks** (Docker Compose). 
+Uma ótima playlist é do canal "Missão Live" ([AULA 8 \| Instalando Novosga Versão 2.2 - YouTube](https://www.youtube.com/watch?v=yYieBXf7Cf4&list=PLO9jGpiO1ux2vEAzKzbZsA5aKnO0Heg59&index=8)). 
+Iremos instalar já versão 2.2, para porder habilitar a função Fura Fila.
 
 ### 1. Configuração no Portainer (Usando Stacks)
 
