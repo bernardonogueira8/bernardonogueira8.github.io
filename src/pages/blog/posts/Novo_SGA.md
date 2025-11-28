@@ -170,7 +170,9 @@ Preeencher apenas com Nome
 <img width="1026" height="768" alt="image" src="https://github.com/bernardonogueira8/bernardonogueira8.github.io/blob/main/public/images/projects/NovoSGA/Pasted%20image%2020251124141623.png?raw=true" />
 ### Prioridades
 <img width="1026" height="768" alt="image" src="https://github.com/bernardonogueira8/bernardonogueira8.github.io/blob/main/public/images/projects/NovoSGA/Pasted%20image%2020251124143022.png?raw=true" />
+
 ---
+
 ## Referências
 [GitHub - Novo SGA](https://github.com/novosga/novosga)
 [Documentação | Novo SGA](http://novosga.org/docs/#/)
