@@ -3,13 +3,23 @@ layout: /src/layouts/MarkdownPostLayout.astro
 title: "Saúde Fetal: Análise e Classificação de Cardiotocografias"
 author: Bernardo Nogueira
 pubDate: 2025-01-29
-description: "Análise automatizada de Cardiotocografias (CTGs) usando Deep Learning para classificar o risco de sofrimento fetal."
-tags: ["Python", "Ciência de Dados", "Saúde", "Deep Learning", "Projetos"]
+description: Análise automatizada de Cardiotocografias (CTGs) usando Deep Learning para classificar o risco de sofrimento fetal.
+tags:
+  - Python
+  - Ciência de Dados
+  - Saúde
+  - Deep Learning
+  - Projetos
 project: true
-languages: ["python", "tensorflow", "pandas", "scikit_learn", "mlflow"]
+languages:
+  - python
+  - tensorflow
+  - pandas
+  - scikit_learn
+  - mlflow
 image:
-    url: "/attachments/fetal_health.png"
-    alt: "Visualização de cardiotocografia e análise de dados."
+  url: /attachments/fetal_health.png
+  alt: Visualização de cardiotocografia e análise de dados.
 ---
 
 O projeto **Saúde Fetal** utiliza **Deep Learning** para fornecer suporte à prevenção da mortalidade infantil e materna. O foco é a **análise automatizada** de Cardiotocografias (CTGs) para classificar o risco fetal em tempo real.
