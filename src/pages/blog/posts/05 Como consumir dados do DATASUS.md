@@ -16,6 +16,9 @@ languages:
   - numpy
   - matplotlib
   - seaborn
+image:
+  url: /attachments/TABNET.png
+  alt: Visualização do painel SGA.
 description: Tutorial sobre o caminho das pedras para consumir dados de Produção Ambulatorial (SIA/SUS) e cruzar com Dados Populacionais, permitindo criar indicadores reais e não apenas olhar para números absolutos.
 ---
 Hoje, vou mostrar o caminho das pedras para consumir dados de **Produção Ambulatorial (SIA/SUS)** e cruzar com **Dados Populacionais**, permitindo criar indicadores reais e não apenas olhar para números absolutos.
