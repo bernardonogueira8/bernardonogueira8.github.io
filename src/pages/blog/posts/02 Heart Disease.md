@@ -3,13 +3,23 @@ layout: /src/layouts/MarkdownPostLayout.astro
 title: "Heart Disease ML: Predição de Doença Cardíaca"
 author: Bernardo Nogueira
 pubDate: 2025-07-29
-description: "Análise preditiva de presença de doença cardíaca em pacientes, comparando múltiplos modelos de classificação."
-tags: ["Python", "Ciência de Dados", "Saúde", "Projetos"]
+description: Análise preditiva de presença de doença cardíaca em pacientes, comparando múltiplos modelos de classificação.
+tags:
+  - Python
+  - Ciência de Dados
+  - Saúde
+  - Projetos
 project: true
-languages: ["python", "scikit_learn", "pandas", "numpy", "matplotlib", "seaborn"]
+languages:
+  - python
+  - scikit_learn
+  - pandas
+  - numpy
+  - matplotlib
+  - seaborn
 image:
-    url: "/attachments/Heart Disease.png"
-    alt: "Visualização de dados e predição de doença cardíaca."
+  url: /attachments/Heart Disease.png
+  alt: Visualização de dados e predição de doença cardíaca.
 ---
 
 **Heart Disease ML** é um projeto de **classificação** que utiliza técnicas de **Aprendizado de Máquina (Machine Learning)** para prever a **presença de doença cardíaca** em pacientes, com base em características clínicas e exames.
