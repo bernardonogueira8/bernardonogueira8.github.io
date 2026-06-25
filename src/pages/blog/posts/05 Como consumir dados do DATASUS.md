@@ -2,7 +2,7 @@
 layout: /src/layouts/MarkdownPostLayout.astro
 title: '"05 Como consumir dados do DATASUS"'
 author: Bernardo Nogueira
-pubDate: 25/06/2026
+pubDate: 2026-06-25
 tags:
   - Python
   - Projetos
