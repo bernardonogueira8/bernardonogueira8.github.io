@@ -3,13 +3,23 @@ layout: /src/layouts/MarkdownPostLayout.astro
 title: "Titanic ML: Prevendo Sobrevivência de Passageiros"
 author: Bernardo Nogueira
 pubDate: 2025-07-29
-description: "Análise preditiva de sobrevivência dos passageiros do Titanic usando aprendizado de máquina e variáveis socioeconômicas."
-tags: ["Python", "Ciência de Dados", "Machine Learning", "Projetos"]
+description: Análise preditiva de sobrevivência dos passageiros do Titanic usando aprendizado de máquina e variáveis socioeconômicas.
+tags:
+  - Python
+  - Ciência de Dados
+  - Machine Learning
+  - Projetos
 project: true
-languages: ["python", "scikit_learn", "pandas", "numpy", "matplotlib", "seaborn"]
+languages:
+  - python
+  - scikit_learn
+  - pandas
+  - numpy
+  - matplotlib
+  - seaborn
 image:
-    url: "/attachments/Titanic_Machine-Learning.png"
-    alt: "Visualização de dados e predição de sobrevivência dos passageiros do Titanic."
+  url: /attachments/Titanic_Machine-Learning.png
+  alt: Visualização de dados e predição de sobrevivência dos passageiros do Titanic.
 ---
 
 O projeto **Titanic ML** é um projeto de **classificação binária** que utiliza técnicas de **Aprendizado de Máquina (Machine Learning)** para prever a **sobrevivência de passageiros** a bordo do RMS Titanic, com base em variáveis socioeconômicas.
