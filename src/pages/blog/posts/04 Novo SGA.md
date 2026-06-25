@@ -1,15 +1,20 @@
 ---
 layout: /src/layouts/MarkdownPostLayout.astro
-title: "Como Implementar o Novo SGA (Sistema de Gerenciamento de Senhas)"
+title: Como Implementar o Novo SGA (Sistema de Gerenciamento de Senhas)
 author: Bernardo Nogueira
 pubDate: 2025-11-24
-description: "Tutorial sobre o passo a passo para a implementação do Novo SGA."
-tags: ["Docker", "Saúde", "Projetos"]
+description: Tutorial sobre o passo a passo para a implementação do Novo SGA.
+tags:
+  - Docker
+  - Saúde
+  - Projetos
 project: true
-languages: ["docker", "php"]
+languages:
+  - docker
+  - php
 image:
-    url: "/attachments/novosga.png"
-    alt: "Visualização do painel SGA."
+  url: /attachments/novosga.png
+  alt: Visualização do painel SGA.
 ---
 Este tutorial fornece um passo a passo para a implementação do Novo SGA, um sistema de gerenciamento de senhas eficiente e amplamente utilizado em ambientes públicos e privados.
 ## Requisitos Mínimos
