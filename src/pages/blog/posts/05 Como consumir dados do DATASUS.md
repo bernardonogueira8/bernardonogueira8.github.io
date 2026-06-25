@@ -1,6 +1,6 @@
 ---
 layout: /src/layouts/MarkdownPostLayout.astro
-title: '"05 Como consumir dados do DATASUS"'
+title: 05 Como consumir dados do DATASUS
 author: Bernardo Nogueira
 pubDate: 2026-06-25
 tags:
@@ -19,7 +19,7 @@ languages:
 image:
   url: /attachments/TABNET.png
   alt: Visualização do painel SGA.
-description: '"Tutorial sobre o caminho das pedras para consumir dados de Produção Ambulatorial (SIA/SUS) e cruzar com Dados Populacionais, permitindo criar indicadores reais e não apenas olhar para números absolutos."'
+description: Tutorial sobre o caminho das pedras para consumir dados de Produção Ambulatorial (SIA/SUS) e cruzar com Dados Populacionais, permitindo criar indicadores reais e não apenas olhar para números absolutos.
 ---
 Hoje, vou mostrar o caminho das pedras para consumir dados de **Produção Ambulatorial (SIA/SUS)** e cruzar com **Dados Populacionais**, permitindo criar indicadores reais e não apenas olhar para números absolutos.
 - Link: [Informações de Saúde (TABNET) – DATASUS](https://datasus.saude.gov.br/informacoes-de-saude-tabnet/) 
