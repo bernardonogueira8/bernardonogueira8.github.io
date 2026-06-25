@@ -3,13 +3,23 @@ layout: /src/layouts/MarkdownPostLayout.astro
 title: "California Housing ML: Predição de Preços de Imóveis"
 author: Bernardo Nogueira
 pubDate: 2025-07-30
-description: "Análise preditiva de preços de casas na Califórnia usando aprendizado de máquina com dados do censo de 1990."
-tags: ["Python", "Ciência de Dados", "Finanças", "Projetos"]
+description: Análise preditiva de preços de casas na Califórnia usando aprendizado de máquina com dados do censo de 1990.
+tags:
+  - Python
+  - Ciência de Dados
+  - Finanças
+  - Projetos
 project: true
-languages: ["python", "scikit_learn", "pandas", "numpy", "matplotlib", "seaborn"]
+languages:
+  - python
+  - scikit_learn
+  - pandas
+  - numpy
+  - matplotlib
+  - seaborn
 image:
-    url: "/attachments/California_Housing-Prices.png"
-    alt: "Visualização de dados e predição de preços de casas na Califórnia."
+  url: /attachments/California_Housing-Prices.png
+  alt: Visualização de dados e predição de preços de casas na Califórnia.
 ---
 
 **California Housing ML** é um projeto de **regressão** que utiliza técnicas de **Aprendizado de Máquina (Machine Learning)** para prever o **valor mediano das casas** em distritos da Califórnia, com base em dados do censo de 1990.
