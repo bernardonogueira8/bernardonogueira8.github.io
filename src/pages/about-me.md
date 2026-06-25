@@ -4,7 +4,7 @@ title: "Bernardo Nogueira | Data Science, Matemática e Gastronomia 🚀"
 description: "Minha jornada entre números, dados, sabores e tecnologia. Aqui compartilho experiências, aprendizados e projetos que unem ciência, ensino e criatividade."
 author: "Bernardo Nogueira"
 image:
-    url: "/images/profile.png"
+    url: "/profile.png"
     alt: "Foto de Bernardo Nogueira para o portfólio"
 ---
 

@@ -6,10 +6,9 @@ pubDate: 2025-11-24
 description: "Tutorial sobre o passo a passo para a implementação do Novo SGA."
 tags: ["Docker", "Saúde", "Projetos"]
 project: true
-languages:
-    ["docker", "php"]
+languages: ["docker", "php"]
 image:
-    url: "/images/projects/novosga.png"
+    url: "/attachments/novosga.png"
     alt: "Visualização do painel SGA."
 ---
 Este tutorial fornece um passo a passo para a implementação do Novo SGA, um sistema de gerenciamento de senhas eficiente e amplamente utilizado em ambientes públicos e privados.
@@ -27,18 +26,18 @@ Este tutorial fornece um passo a passo para a implementação do Novo SGA, um si
 3. **Bootar o Servidor:** Conecte o pendrive no servidor, reinicie-o e selecione o pendrive como dispositivo de boot. 
 4. **Iniciar a Instalação:**
     1. Selecione **"Install Proxmox VE"**.<img width="1026" height="768" alt="image" src="https://github.com/user-attachments/assets/2330b30d-374f-4825-a5f6-0641cf70f78e" />
-    2. Aceite os Termos de Uso. <img width="1026" height="768" alt="image" src="https://github.com/bernardonogueira8/bernardonogueira8.github.io/blob/main/public/images/projects/NovoSGA/Pasted%20image%2020251124114112.png?raw=true" />
+    2. Aceite os Termos de Uso. <img width="1026" height="768" alt="image" src="https://github.com/bernardonogueira8/bernardonogueira8.github.io/blob/main/public/attachments/Pasted%20image%2020251124114112.png?raw=true" />
     3. Selecione o disco onde o Proxmox será instalado.(Normalmente já vem pré-selecionado, obs: Na janela que se abre (Harddisk options) configurar conforme o print abaixo, definindo 60GB no campo "hdsize" (o restante do espaço em disco será alocado posteriormente para definição do Storage das Máquinas Virtuais), o campo "maxroot" também com 60GB e o "maxvz" com 0 (zero). Isso fará com que o Proxmox não crie a automaticamente uma partição para o Storage das VMs (ele cria por padrão), pois isso será feito manualmente depois).
-    4. Defina as **Configurações Regionais** (País, Fuso Horário e Layout do Teclado). <img width="1026" height="768" alt="image" src="https://github.com/bernardonogueira8/bernardonogueira8.github.io/blob/main/public/images/projects/NovoSGA/Pasted%20image%2020251124114258.png?raw=true" />
-    5. Crie a senha de root e insira um e-mail. (Para padronizar, preencha a senha com 'root').<img width="1026" height="768" alt="image" src="https://github.com/bernardonogueira8/bernardonogueira8.github.io/blob/main/public/images/projects/NovoSGA/Pasted%20image%2020251124114342.png?raw=true" />
+    4. Defina as **Configurações Regionais** (País, Fuso Horário e Layout do Teclado). <img width="1026" height="768" alt="image" src="https://github.com/bernardonogueira8/bernardonogueira8.github.io/blob/main/public/attachments/Pasted%20image%2020251124114258.png?raw=true" />
+    5. Crie a senha de root e insira um e-mail. (Para padronizar, preencha a senha com 'root').<img width="1026" height="768" alt="image" src="https://github.com/bernardonogueira8/bernardonogueira8.github.io/blob/main/public/attachments/Pasted%20image%2020251124114342.png?raw=true" />
     6. Configure as **Configurações de Rede**: IP estático, Netmask, Gateway e DNS Server. **Dica:** Use um IP fixo que você possa lembrar facilmente, mas caso não possua conhecimento do IP livre, deixe em dhcp.
-    7. Confirme o resumo e comece a instalação. <img width="1026" height="768" alt="image" src="https://github.com/bernardonogueira8/bernardonogueira8.github.io/blob/main/public/images/projects/NovoSGA/Pasted%20image%2020251124114540.png?raw=true" />
+    7. Confirme o resumo e comece a instalação. <img width="1026" height="768" alt="image" src="https://github.com/bernardonogueira8/bernardonogueira8.github.io/blob/main/public/attachments/Pasted%20image%2020251124114540.png?raw=true" />
 5. **Acesso:** Após a reinicialização, acesse a interface web pelo seu navegador: `https://<Seu_IP_Proxmox>:8006`
 ## Parte 2: Instalação do Portainer (Em um Contêiner LXC)
 É uma boa prática instalar o Portainer dentro de um contêiner leve (LXC) no Proxmox para gerenciar o Docker.
 
 ### 1. Criar um Contêiner VM para o Docker
-1. **Acesse o Shell:** Na interface web do Proxmox, navegue para o nó principal (**host**) e clique em **Shell**. <img width="1026" height="768" alt="image" src="https://github.com/bernardonogueira8/bernardonogueira8.github.io/blob/main/public/images/projects/NovoSGA/Pasted%20image%2020251124115647.png?raw=true" />
+1. **Acesse o Shell:** Na interface web do Proxmox, navegue para o nó principal (**host**) e clique em **Shell**. <img width="1026" height="768" alt="image" src="https://github.com/bernardonogueira8/bernardonogueira8.github.io/blob/main/public/attachments/Pasted%20image%2020251124115647.png?raw=true" />
 2. **Execute o Script:** Cole o código que você forneceu. Ele irá baixar, configurar e criar uma VM com o Ubuntu 24.04.
    ```
    bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/vm/ubuntu2404-vm.sh)"
@@ -161,15 +160,18 @@ quit
 - Preencha o campo Logo do Login com:<img width="270" height="107" alt="novosga-login" src="https://github.com/user-attachments/assets/60d80423-1123-4e95-9b30-668a07f2684e" />
 
 ### Sistema
-<img width="1026" height="768" alt="image" src="https://github.com/bernardonogueira8/bernardonogueira8.github.io/blob/main/public/images/projects/NovoSGA/Pasted%20image%2020251124140641.png?raw=true" />
+<img width="1026" height="768" alt="image" src="https://github.com/bernardonogueira8/bernardonogueira8.github.io/blob/main/public/attachments/Pasted%20image%2020251124140641.png?raw=true" />
+
 ### Unidades
 Preeencher apenas com Nome
 ### Serviços
-<img width="1026" height="768" alt="image" src="https://github.com/bernardonogueira8/bernardonogueira8.github.io/blob/main/public/images/projects/NovoSGA/Pasted%20image%2020251124141556.png?raw=true" />
+<img width="1026" height="768" alt="image" src="https://github.com/bernardonogueira8/bernardonogueira8.github.io/blob/main/public/attachments/Pasted%20image%2020251124141556.png?raw=true" />
+
 ### Perfis
-<img width="1026" height="768" alt="image" src="https://github.com/bernardonogueira8/bernardonogueira8.github.io/blob/main/public/images/projects/NovoSGA/Pasted%20image%2020251124141623.png?raw=true" />
+<img width="1026" height="768" alt="image" src="https://github.com/bernardonogueira8/bernardonogueira8.github.io/blob/main/public/attachments/Pasted%20image%2020251124141623.png?raw=true" />
+
 ### Prioridades
-<img width="1026" height="768" alt="image" src="https://github.com/bernardonogueira8/bernardonogueira8.github.io/blob/main/public/images/projects/NovoSGA/Pasted%20image%2020251124143022.png?raw=true" />
+<img width="1026" height="768" alt="image" src="https://github.com/bernardonogueira8/bernardonogueira8.github.io/blob/main/public/attachments/Pasted%20image%2020251124143022.png?raw=true" />
 
 ---
 

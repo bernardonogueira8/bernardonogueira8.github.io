@@ -6,10 +6,9 @@ pubDate: 2025-07-29
 description: "Análise preditiva de sobrevivência dos passageiros do Titanic usando aprendizado de máquina e variáveis socioeconômicas."
 tags: ["Python", "Ciência de Dados", "Machine Learning", "Projetos"]
 project: true
-languages:
-    ["python", "scikit_learn", "pandas", "numpy", "matplotlib", "seaborn"]
+languages: ["python", "scikit_learn", "pandas", "numpy", "matplotlib", "seaborn"]
 image:
-    url: "/images/projects/Titanic_Machine-Learning.png"
+    url: "/attachments/Titanic_Machine-Learning.png"
     alt: "Visualização de dados e predição de sobrevivência dos passageiros do Titanic."
 ---
 

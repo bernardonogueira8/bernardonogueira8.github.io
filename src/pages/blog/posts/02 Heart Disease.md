@@ -6,10 +6,9 @@ pubDate: 2025-07-29
 description: "Análise preditiva de presença de doença cardíaca em pacientes, comparando múltiplos modelos de classificação."
 tags: ["Python", "Ciência de Dados", "Saúde", "Projetos"]
 project: true
-languages:
-    ["python", "scikit_learn", "pandas", "numpy", "matplotlib", "seaborn"]
+languages: ["python", "scikit_learn", "pandas", "numpy", "matplotlib", "seaborn"]
 image:
-    url: "/images/projects/Heart Disease.png"
+    url: "/attachments/Heart Disease.png"
     alt: "Visualização de dados e predição de doença cardíaca."
 ---
 

@@ -8,7 +8,7 @@ tags: ["Python", "Ciência de Dados", "Saúde", "Deep Learning", "Projetos"]
 project: true
 languages: ["python", "tensorflow", "pandas", "scikit_learn", "mlflow"]
 image:
-    url: "/images/projects/fetal_health.png"
+    url: "/attachments/fetal_health.png"
     alt: "Visualização de cardiotocografia e análise de dados."
 ---
 

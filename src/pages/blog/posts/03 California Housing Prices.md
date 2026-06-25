@@ -6,10 +6,9 @@ pubDate: 2025-07-30
 description: "Análise preditiva de preços de casas na Califórnia usando aprendizado de máquina com dados do censo de 1990."
 tags: ["Python", "Ciência de Dados", "Finanças", "Projetos"]
 project: true
-languages:
-    ["python", "scikit_learn", "pandas", "numpy", "matplotlib", "seaborn"]
+languages: ["python", "scikit_learn", "pandas", "numpy", "matplotlib", "seaborn"]
 image:
-    url: "/images/projects/California_Housing-Prices.png"
+    url: "/attachments/California_Housing-Prices.png"
     alt: "Visualização de dados e predição de preços de casas na Califórnia."
 ---
 
